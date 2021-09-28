@@ -3,7 +3,7 @@ const axios = require("axios");
 const {Fruits,FruitModel}= require('./model');
 
 const getFruit=(req,res)=>{
-    let url ='https://fruit-api-301.herokuapp.com/getFruit'
+    let url =`${process.env.API}`
     axios.get(url).then(item=>{
         console.log(item.data.fruits);
         let fruitData = item.data.fruits;
